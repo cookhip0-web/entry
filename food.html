@@ -4,156 +4,170 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Foods That Keep Me Awake and Drooling</title>
-  
-  <!-- CSS 연결 -->
-  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: "Bradley Hand", cursive;
+      background-color: #fffaf0; /* ivory */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 40px 20px;
+      margin: 0;
+      gap: 24px;
+      background-image: url('images/food_pattern.png');
+      background-size: 200px;
+      opacity: 0.97;
+    }
+
+    h1 {
+      font-size: 2rem;
+      color: #3b2f2f;
+      margin-bottom: 0.5em;
+    }
+
+    .food-card {
+      background-color: transparent;
+      border-radius: 16px;
+      width: 90%;
+      max-width: 600px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .food-card img {
+      width: 80%;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .food-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: #8b5e3b;
+    }
+
+    .food-desc {
+      font-size: 1rem;
+      color: #4a3c2a;
+      text-align: center;
+    }
+
+    .experience-btn {
+      background-color: #c8b48a; 
+      color: #3b2f2f;
+      border: none;
+      border-radius: 12px;
+      padding: 10px 18px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      outline: none;
+    }
+
+    .experience-btn:hover {
+      background-color: #b29d78;
+      transform: scale(1.05);
+    }
+
+    /* Hover effects */
+    .food-card.steak:hover img {
+      filter: brightness(1.1) contrast(1.1);
+    }
+
+    .food-card.pasta:hover img {
+      filter: saturate(1.4);
+    }
+
+    .food-card.bagel:hover img {
+      animation: crumbs 0.6s ease-out;
+    }
+
+    @keyframes crumbs {
+      0% { transform: scale(1); opacity: 1; }
+      100% { transform: scale(0.98); opacity: 0.9; }
+    }
+
+    .food-card.drink:hover img {
+      animation: bubbles 1s infinite ease-in-out;
+    }
+
+    @keyframes bubbles {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+      100% { transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-<style> 
-body {
-  font-family: "Bradley Hand", cursive;
-  background-color: #fffaf0; /* ivory */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 40px 20px;
-  margin: 0;
-  gap: 24px;
-  background-image: url('images/food_pattern.png');
-  background-size: 200px;
-  opacity: 0.97;
-}
 
-h1 {
-  font-size: 2rem;
-  color: #3b2f2f;
-  margin-bottom: 0.5em;
-}
+  <h1>Foods That Make Me Drool 😋</h1>
 
-.food-card {
-  background-color: transparent;
-  border-radius: 16px;
-  width: 90%;
-  max-width: 600px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+  <!-- Steak -->
+  <div class="food-card steak">
+    <img src="images/steak_no.PNG" alt="Steak">
+    <div class="food-title">🥩 Premium Steak</div>
+    <div class="food-desc">I finally had a really expensive steak perfectly juicy, buttery, and unforgettable.</div>
+    <button class="experience-btn" 
+            data-white="images/steak_no.PNG" 
+            data-color="images/steak.jpg">🍽️ Taste</button>
+  </div>
 
-.food-card img {
-  width: 80%;
-  border-radius: 12px;
-  transition: transform 0.3s ease;
-}
+  <!-- Pasta -->
+  <div class="food-card pasta">
+    <img src="images/pasta_no.PNG" alt="Pasta">
+    <div class="food-title">🍝 Ruby's Cafe Pasta</div>
+    <div class="food-desc">This is the best pasta I've ever had creamy, rich, and full of flavor. It's from Ruby's Cafe.</div>
+    <button class="experience-btn" 
+            data-white="images/pasta_no.PNG" 
+            data-color="images/pasta.jpg">✨ Try Bite</button>
+  </div>
 
-.food-title {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: #8b5e3b;
-}
+  <!-- Bagel -->
+  <div class="food-card bagel">
+    <img src="images/bagel_no.png" alt="Bagel">
+    <div class="food-title">🥯 New York Bagel</div>
+    <div class="food-desc">New York bagels are unbeatable warm, chewy, and absolutely perfect.</div>
+    <button class="experience-btn" 
+            data-white="images/bagel_no.png" 
+            data-color="images/bagel.jpg">😋 Bite Me</button>
+  </div>
 
-.food-desc {
-  font-size: 1rem;
-  color: #4a3c2a;
-  text-align: center;
-}
+  <!-- Drink -->
+  <div class="food-card drink">
+    <img src="images/dri_no.png" alt="Boba Drink">
+    <div class="food-title">🧋 HeyTea Boba</div>
+    <div class="food-desc">HeyTea is my favorite boba brand balanced tea flavor with the perfect chewy pearls.</div>
+    <button class="experience-btn" 
+            data-white="images/dri_no.png" 
+            data-color="images/dri.jpg">🌈 Sip!</button>
+  </div>
 
-.experience-btn {
-  background-color: #c8b48a; 
-  color: #3b2f2f;
-  border: none;
-  border-radius: 12px;
-  padding: 10px 18px;
-  cursor: pointer;
-  font-size: 1rem;
-  transition: background-color 0.3s ease, transform 0.3s ease;
-  outline: none;
-}
+  <!-- 뒤로가기 링크 -->
+  <a href="index.html"> ← Back </a>
 
-.experience-btn:hover {
-  background-color: #b29d78;
-  transform: scale(1.05);
-}
+  <script>
+    const buttons = document.querySelectorAll('.experience-btn');
 
-/* Hover effects */
-.food-card.steak:hover img {
-  filter: brightness(1.1) contrast(1.1);
-}
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const img = btn.parentElement.querySelector('img');
+        const whiteSrc = btn.dataset.white;
+        const colorSrc = btn.dataset.color;
 
-.food-card.pasta:hover img {
-  filter: saturate(1.4);
-}
+        // 컬러 이미지로 변경
+        img.src = colorSrc;
 
-.food-card.bagel:hover img {
-  animation: crumbs 0.6s ease-out;
-}
-
-@keyframes crumbs {
-  0% { transform: scale(1); opacity: 1; }
-  100% { transform: scale(0.98); opacity: 0.9; }
-}
-
-.food-card.drink:hover img {
-  animation: bubbles 1s infinite ease-in-out;
-}
-
-@keyframes bubbles {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-  100% { transform: translateY(0); }
-}
-</style>
-  
-<h1>Foods That Make Me Drool 😋</h1>
-
-<!-- Steak -->
-<div class="food-card steak">
-  <img src="images/steak_no.PNG" alt="Steak">
-  <div class="food-title">🥩 Premium Steak</div>
-  <div class="food-desc">I finally had a really expensive steak perfectly juicy, buttery, and unforgettable.</div>
-  <button class="experience-btn" 
-          data-white="images/steak_no.PNG" 
-          data-color="images/steak.jpg">🍽️ Taste</button>
-</div>
-
-<!-- Pasta -->
-<div class="food-card pasta">
-  <img src="images/pasta_no.PNG" alt="Pasta">
-  <div class="food-title">🍝 Ruby's Cafe Pasta</div>
-  <div class="food-desc">This is the best pasta I've ever had creamy, rich, and full of flavor. It's from Ruby's Cafe.</div>
-  <button class="experience-btn" 
-          data-white="images/pasta_no.PNG" 
-          data-color="images/pasta.jpg">✨ Try Bite</button>
-</div>
-
-<!-- Bagel -->
-<div class="food-card bagel">
-  <img src="images/bagel_no.png" alt="Bagel">
-  <div class="food-title">🥯 New York Bagel</div>
-  <div class="food-desc">New York bagels are unbeatable warm, chewy, and absolutely perfect.</div>
-  <button class="experience-btn" 
-          data-white="images/bagel_no.png" 
-          data-color="images/bagel.jpg">😋 Bite Me</button>
-</div>
-
-<!-- Drink -->
-<div class="food-card drink">
-  <img src="images/dri_no.png" alt="Boba Drink">
-  <div class="food-title">🧋 HeyTea Boba</div>
-  <div class="food-desc">HeyTea is my favorite boba brand balanced tea flavor with the perfect chewy pearls.</div>
-  <button class="experience-btn" 
-          data-white="images/dri_no.png" 
-          data-color="images/dri.jpg">🌈 Sip!</button>
-</div>
-
-<!-- 뒤로가기 링크 -->
-<a href="index.html"> ← Back </a>
-
-<!-- JS 연결 -->
-<script src="script.js"></script>
+        // 2초 후 흑백 이미지로 돌아오기
+        setTimeout(() => {
+          img.src = whiteSrc;
+        }, 2000);
+      });
+    });
+  </script>
 
 </body>
 </html>
